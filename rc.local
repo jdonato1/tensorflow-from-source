@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+mkdir -p /root
+cd /root
+chmod 755 tf_build
+
+echo "To start build, type:"
+echo "#   ./tf_build	; # build tensorflow"
+
+/bin/bash -i
