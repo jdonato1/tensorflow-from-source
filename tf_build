@@ -5,7 +5,7 @@
 echo "NOTE: about 12,000 objects to compile, prepare for 8 hour compile"
 printf "Press Enter to continue (^C to abort): "
 read WAIT_FOR_ENTER
-
+ 
 apt-get update
 apt-get upgrade -y
 apt-get install -y         openjdk-8-jdk         curl 	gnupg2 	git
