@@ -1,3 +1,6 @@
+# jdonato1/tensorflow-from-source
+# Jorge Donato / jmdonato1@sbcglobal.net 
+#
 # Build an Ubuntu environment that can use bazel to build tensorflow
 #
 # This is intended for compiling tensorflow for Poorman's Kaggle 

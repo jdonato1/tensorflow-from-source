@@ -1,4 +1,6 @@
 #!/bin/bash
+# Tensorflow builder
+# Jorge Donato / jdonato1@sbcglobal.net
 
 echo "NOTE: about 12,000 objects to compile, prepare for 8 hour compile"
 printf "Press Enter to continue (^C to abort): "
@@ -20,4 +22,16 @@ ln -s /usr/bin/pip3 /usr/bin/pip
 
 cd /root
 rm -rf tensorflow
-git clone https://github.com/tensorflow/tensorflow.git --branch master --single-branch &&         cd tensorflow &&         ( echo /usr/bin/python3 ) | ./configure && 	cd /root/tensorflow &&         bazel build --config=monolithic //tensorflow/tools/pip_package:build_pip_package &&         bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg &&         mv /tmp/tensorflow_pkg/tensorflow-*.whl . &&         ls -l tensorflow-*.whl &&         echo &&         echo "To install this tensorflow onto a computer with an existing package (as root):" &&         echo "#   pip3 install --upgrade " tensorflow-*whl &&         echo &&         echo Done Mon Oct 22 21:56:33 UTC 2018
+git clone https://github.com/tensorflow/tensorflow.git --branch master --single-branch && \
+        cd tensorflow && \
+        ( echo /usr/bin/python3 ) | ./configure && \
+	cd /root/tensorflow && \
+        bazel build --config=monolithic //tensorflow/tools/pip_package:build_pip_package && \
+        bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg && \
+        mv /tmp/tensorflow_pkg/tensorflow-*.whl . && \
+        ls -l tensorflow-*.whl && \
+        echo && \
+        echo "To install this tensorflow onto a computer with an existing package (as root):" && \
+        echo "#   pip3 install --upgrade " tensorflow-*whl && \
+        echo && \
+        echo Done Mon Oct 22 21:56:33 UTC 2018
