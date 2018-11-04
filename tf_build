@@ -2,16 +2,60 @@
 # Tensorflow builder
 # Jorge Donato / jdonato1@sbcglobal.net
 
+##### This is the USAGE help
+## select type of build:
+##      ./tf_build -s		stable known compile
+##	 	OR
+##      ./tf_build -l		latest and greatest
+##		OR
+## 	./tf_build -c args...	specify some package versions & parameters
+##		where args:
+## 		    <bazel_pkg>   <tf_tag>  <bazel_config_flag>  <xla__y_N>	
+##		example:
+##	    ./tf_build -c bazel=0.18.1  v1.12.0  --config=monolithic   n
+
+
+if [ "$1" = "-s" ]
+then
+	# stable build: bazel=0.18.1, tf=0.12.0rc0
+	BAZEL_VERSION="bazel=0.18.1"
+	COMMIT=v1.12.0-rc0
+	CONFIG=--config=monolithic
+	XLA=n
+elif [ "$1" = "-l" ]
+then
+	# latest and greatest
+	BAZEL_VERSION="bazel"
+	COMMIT=master
+	CONFIG=--config=monolithic
+	XLA=n
+elif [ "$1" = "-c" ]
+then
+	# ./tf_build -c bazel=0.18.1  v1.12.1  --config=monolithic   n
+	#               <bazel_pkg>   <tf_tag>  <bazel_config_flag>  <xla__y_N>
+	BAZEL_VERSION="$2"
+	COMMIT="$3"
+	CONFIG="$4"
+	XLA="$5"
+else
+	grep '^## ' "$0"
+	exit 10
+fi
+
+
 echo "NOTE: about 12,000 objects to compile, prepare for 8 hour compile"
 printf "Press Enter to continue (^C to abort): "
 read WAIT_FOR_ENTER
  
 apt-get update
 apt-get upgrade -y
+
 apt-get install -y \
         openjdk-8-jdk \
         curl \
 	gnupg2 \
+	net-tools \
+	vim \
 	git
 
 echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list 
@@ -23,22 +67,50 @@ apt-get update && \
                 python3-dev \
 		python3-numpy \
 		python3-pip \
+		python3-keras \
+		libc-ares-dev \
                 gcc \
                 g++ \
-                bazel
+                $BAZEL_VERSION
 
 rm /usr/bin/python
 ln -s /usr/bin/python3 /usr/bin/python
 rm /usr/bin/pip
 ln -s /usr/bin/pip3 /usr/bin/pip
 
+# Python packages required (yes, I know keras again but bazel
+# was not content with it)
+pip3 install \
+	keras_applications \
+	keras_preprocessing
+
 cd /root
-rm -rf tensorflow
-git clone https://github.com/tensorflow/tensorflow.git --branch master --single-branch && \
-        cd tensorflow && \
-        ( echo /usr/bin/python3 ) | ./configure && \
-	cd /root/tensorflow && \
-        bazel build --config=monolithic //tensorflow/tools/pip_package:build_pip_package && \
+
+# If tensorflow already cloned: do not download again
+if [ -d tensorflow ]
+then
+	echo tensorflow repo dir found, using it
+	cd tensorflow
+	git pull origin 
+else
+	echo tensorflow not found, cloning now ...
+	rm -rf tensorflow
+	git clone https://github.com/tensorflow/tensorflow.git
+	cd tensorflow
+fi	
+
+if [ "$AFTER_GIT_ABORT" = "1" ]
+then
+	echo AFTER_GIT_ABORT=1, aborting
+	exit 0
+fi
+
+cd /root/tensorflow
+
+git checkout $COMMIT && \
+	# python3, no xla
+        ( echo /usr/bin/python3; echo; echo $XLA ) | ./configure && \
+        bazel build $CONFIG //tensorflow/tools/pip_package:build_pip_package && \
         bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg && \
         mv /tmp/tensorflow_pkg/tensorflow-*.whl . && \
         ls -l tensorflow-*.whl && \

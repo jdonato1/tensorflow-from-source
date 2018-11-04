@@ -6,7 +6,8 @@ mkdir -p /root
 cd /root
 chmod 755 tf_build
 
+# Run tf_build script without args, give the options available
 echo "To start build, type:"
-echo "#   ./tf_build	; # build tensorflow"
+./tf_build
 
 /bin/bash -i
