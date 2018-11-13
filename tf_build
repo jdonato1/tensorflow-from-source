@@ -3,10 +3,10 @@
 # Jorge Donato / jdonato1@sbcglobal.net
 
 ##### This is the USAGE help
-## select type of build:
+## Select type of build:
 ##      ./tf_build -s		stable known compile
 ##	 	OR
-##	./tf_build -s11		stable v1.11.0 tensorflow
+##	./tf_build -s11		stable v1.11.0 tensorflow (tested)
 ##		OR
 ##      ./tf_build -l		latest and greatest
 ##		OR
@@ -55,7 +55,7 @@ then
 	CONFIG="$4"
 	XLA="$5"
 else
-	grep '^## ' "$0"
+	grep '^##' "$0" | grep -v '^###'
 	exit 10
 fi
 
@@ -143,4 +143,4 @@ git checkout $COMMIT && \
         echo "To install this tensorflow onto a computer with an existing package (as root):" && \
         echo "#   pip3 install --upgrade " tensorflow-*whl && \
         echo && \
-        echo Done Mon Oct 22 21:56:33 UTC 2018
+        date "+%x %X: Done"
