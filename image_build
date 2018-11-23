@@ -5,7 +5,7 @@ CONTAINER=tf_for_old_intel
 TAG=bionic
 
 docker rm -f $CONTAINER ; \
-	docker build --rm=${RM:-false} -t $IMAGE:latest -t $IMAGE:$TAG . && \
+	docker build -t $IMAGE:latest -t $IMAGE:$TAG . && \
 	docker run \
 		--name $CONTAINER \
 		-it \

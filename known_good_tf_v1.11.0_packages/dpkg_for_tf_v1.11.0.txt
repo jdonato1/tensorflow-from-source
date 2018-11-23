@@ -11,7 +11,7 @@ ii  base-files                    10.1ubuntu2.3                     amd64       
 ii  base-passwd                   3.5.44                            amd64        Debian base system master password and group files
 ii  bash                          4.4.18-2ubuntu1                   amd64        GNU Bourne Again SHell
 ii  bash-completion               1:2.8-1ubuntu1                    all          programmable completion for the bash shell
-ii  bazel                         0.19.1                            amd64        Bazel is a tool that automates software builds and tests.
+ii  bazel                         0.19.2                            amd64        Bazel is a tool that automates software builds and tests.
 ii  binutils                      2.30-21ubuntu1~18.04              amd64        GNU assembler, linker and binary utilities
 ii  binutils-common:amd64         2.30-21ubuntu1~18.04              amd64        Common files for the GNU assembler, linker and binary utilities
 ii  binutils-x86-64-linux-gnu     2.30-21ubuntu1~18.04              amd64        GNU binary utilities, for x86-64-linux-gnu target
@@ -178,8 +178,8 @@ ii  libgl1:amd64                  1.0.0-2ubuntu2.2                  amd64       
 ii  libgl1-mesa-dri:amd64         18.0.5-0ubuntu0~18.04.1           amd64        free implementation of the OpenGL API -- DRI modules
 ii  libgl1-mesa-glx:amd64         18.0.5-0ubuntu0~18.04.1           amd64        transitional dummy package
 ii  libglapi-mesa:amd64           18.0.5-0ubuntu0~18.04.1           amd64        free implementation of the GL API -- shared library
-ii  libglib2.0-0:amd64            2.56.2-0ubuntu0.18.04.2           amd64        GLib library of C routines
-ii  libglib2.0-data               2.56.2-0ubuntu0.18.04.2           all          Common files for GLib library
+ii  libglib2.0-0:amd64            2.56.3-0ubuntu0.18.04.1           amd64        GLib library of C routines
+ii  libglib2.0-data               2.56.3-0ubuntu0.18.04.1           all          Common files for GLib library
 ii  libglvnd0:amd64               1.0.0-2ubuntu2.2                  amd64        Vendor neutral GL dispatch library
 ii  libglx-mesa0:amd64            18.0.5-0ubuntu0~18.04.1           amd64        free implementation of the OpenGL API -- GLX vendor library
 ii  libglx0:amd64                 1.0.0-2ubuntu2.2                  amd64        Vendor neutral GL dispatch library -- GLX support
@@ -225,8 +225,8 @@ ii  libksba8:amd64                1.3.5-2                           amd64       
 ii  liblab-gamut1                 2.40.1-2                          amd64        rich set of graph drawing tools - liblab_gamut library
 ii  liblapack3:amd64              3.7.1-4ubuntu1                    amd64        Library of linear algebra routines 3 - shared version
 ii  liblcms2-2:amd64              2.9-1ubuntu0.1                    amd64        Little CMS 2 color management library
-ii  libldap-2.4-2:amd64           2.4.45+dfsg-1ubuntu1              amd64        OpenLDAP libraries
-ii  libldap-common                2.4.45+dfsg-1ubuntu1              all          OpenLDAP common files for libraries
+ii  libldap-2.4-2:amd64           2.4.45+dfsg-1ubuntu1.1            amd64        OpenLDAP libraries
+ii  libldap-common                2.4.45+dfsg-1ubuntu1.1            all          OpenLDAP common files for libraries
 ii  libllvm6.0:amd64              1:6.0-1ubuntu2                    amd64        Modular compiler and toolchain technologies, runtime library
 ii  liblocale-gettext-perl        1.07-3build2                      amd64        module using libc functions for internationalization in Perl
 ii  liblsan0:amd64                8.2.0-1ubuntu2~18.04              amd64        LeakSanitizer -- a memory leak detector (runtime)
@@ -268,12 +268,12 @@ ii  libproxy1v5:amd64             0.4.15-1                          amd64       
 ii  libpsl5:amd64                 0.19.1-5build1                    amd64        Library for Public Suffix List (shared libraries)
 ii  libpthread-stubs0-dev:amd64   0.3-4                             amd64        pthread stubs not provided by native libc, development files
 ii  libpulse0:amd64               1:11.1-1ubuntu7.1                 amd64        PulseAudio client libraries
-ii  libpython3-dev:amd64          3.6.5-3ubuntu1                    amd64        header files and a static library for Python (default)
-ii  libpython3-stdlib:amd64       3.6.5-3ubuntu1                    amd64        interactive high-level object-oriented language (default python3 version)
-ii  libpython3.6:amd64            3.6.6-1~18.04                     amd64        Shared Python runtime library (version 3.6)
-ii  libpython3.6-dev:amd64        3.6.6-1~18.04                     amd64        Header files and a static library for Python (v3.6)
-ii  libpython3.6-minimal:amd64    3.6.6-1~18.04                     amd64        Minimal subset of the Python language (version 3.6)
-ii  libpython3.6-stdlib:amd64     3.6.6-1~18.04                     amd64        Interactive high-level object-oriented language (standard library, version 3.6)
+ii  libpython3-dev:amd64          3.6.7-1~18.04                     amd64        header files and a static library for Python (default)
+ii  libpython3-stdlib:amd64       3.6.7-1~18.04                     amd64        interactive high-level object-oriented language (default python3 version)
+ii  libpython3.6:amd64            3.6.7-1~18.04                     amd64        Shared Python runtime library (version 3.6)
+ii  libpython3.6-dev:amd64        3.6.7-1~18.04                     amd64        Header files and a static library for Python (v3.6)
+ii  libpython3.6-minimal:amd64    3.6.7-1~18.04                     amd64        Minimal subset of the Python language (version 3.6)
+ii  libpython3.6-stdlib:amd64     3.6.7-1~18.04                     amd64        Interactive high-level object-oriented language (standard library, version 3.6)
 ii  libquadmath0:amd64            8.2.0-1ubuntu2~18.04              amd64        GCC Quad-Precision Math Library
 ii  libreadline7:amd64            7.0-3                             amd64        GNU readline and history libraries, run-time libraries
 ii  librest-0.7-0:amd64           0.8.0-2                           amd64        REST service access library
@@ -302,7 +302,7 @@ ii  libssl1.0.0:amd64             1.0.2n-1ubuntu5.1                 amd64       
 ii  libssl1.1:amd64               1.1.0g-2ubuntu4.1                 amd64        Secure Sockets Layer toolkit - shared libraries
 ii  libstdc++-7-dev:amd64         7.3.0-27ubuntu1~18.04             amd64        GNU Standard C++ Library v3 (development files)
 ii  libstdc++6:amd64              8.2.0-1ubuntu2~18.04              amd64        GNU Standard C++ Library v3
-ii  libsystemd0:amd64             237-3ubuntu10.6                   amd64        systemd utility library
+ii  libsystemd0:amd64             237-3ubuntu10.9                   amd64        systemd utility library
 ii  libsz2:amd64                  0.3.2-2                           amd64        Adaptive Entropy Coding library - SZIP
 ii  libtasn1-6:amd64              4.13-2                            amd64        Manage ASN.1 structures (runtime)
 ii  libthai-data                  0.1.27-2                          all          Data files for Thai language support library
@@ -311,7 +311,7 @@ ii  libtiff5:amd64                4.0.9-5                           amd64       
 ii  libtinfo5:amd64               6.1-1ubuntu1.18.04                amd64        shared low-level terminfo library for terminal handling
 ii  libtsan0:amd64                8.2.0-1ubuntu2~18.04              amd64        ThreadSanitizer -- a Valgrind-based detector of data races (runtime)
 ii  libubsan0:amd64               7.3.0-27ubuntu1~18.04             amd64        UBSan -- undefined behaviour sanitizer (runtime)
-ii  libudev1:amd64                237-3ubuntu10.6                   amd64        libudev shared library
+ii  libudev1:amd64                237-3ubuntu10.9                   amd64        libudev shared library
 ii  libunistring2:amd64           0.9.9-0ubuntu1                    amd64        Unicode string library for C
 ii  libuuid1:amd64                2.31.1-0.4ubuntu3.2               amd64        Universally Unique ID library
 ii  libvorbis0a:amd64             1.3.5-4.2                         amd64        decoder library for Vorbis General Audio Compression Codec
@@ -370,7 +370,7 @@ ii  libxxf86dga1:amd64            2:1.1.4-1                         amd64       
 ii  libxxf86vm1:amd64             1:1.1.4-1                         amd64        X11 XFree86 video mode extension library
 ii  libyaml-0-2:amd64             0.1.7-2ubuntu3                    amd64        Fast YAML 1.1 parser and emitter library
 ii  libzstd1:amd64                1.3.3+dfsg-2ubuntu1               amd64        fast lossless compression algorithm
-ii  linux-libc-dev:amd64          4.15.0-38.41                      amd64        Linux Kernel Headers for development
+ii  linux-libc-dev:amd64          4.15.0-39.42                      amd64        Linux Kernel Headers for development
 ii  login                         1:4.5-1ubuntu1                    amd64        system login tools
 ii  lsb-base                      9.20170808ubuntu1                 all          Linux Standard Base init script functionality
 ii  make                          4.1-9.1ubuntu1                    amd64        utility for directing compilation
@@ -399,23 +399,23 @@ ii  pinentry-curses               1.1.0-1                           amd64       
 ii  procps                        2:3.3.12-3ubuntu1.1               amd64        /proc file system utilities
 ii  publicsuffix                  20180223.1310-1                   all          accurate, machine-readable list of domain name suffixes
 ii  python-pip-whl                9.0.1-2.3~ubuntu1                 all          Python package installer
-ii  python3                       3.6.5-3ubuntu1                    amd64        interactive high-level object-oriented language (default python3 version)
+ii  python3                       3.6.7-1~18.04                     amd64        interactive high-level object-oriented language (default python3 version)
 ii  python3-asn1crypto            0.24.0-1                          all          Fast ASN.1 parser and serializer (Python 3)
 ii  python3-cffi-backend          1.11.5-1                          amd64        Foreign Function Interface for Python 3 calling C code - runtime
 ii  python3-crypto                2.6.1-8ubuntu2                    amd64        cryptographic algorithms and protocols for Python 3
 ii  python3-cryptography          2.1.4-1ubuntu1.2                  amd64        Python library exposing cryptographic recipes and primitives (Python 3)
 ii  python3-dbus                  1.2.6-1                           amd64        simple interprocess messaging system (Python 3 interface)
 ii  python3-decorator             4.1.2-1                           all          simplify usage of Python decorators by programmers
-ii  python3-dev                   3.6.5-3ubuntu1                    amd64        header files and a static library for Python (default)
-ii  python3-distutils             3.6.5-3                           all          distutils package for Python 3.x
+ii  python3-dev                   3.6.7-1~18.04                     amd64        header files and a static library for Python (default)
+ii  python3-distutils             3.6.7-1~18.04                     all          distutils package for Python 3.x
 ii  python3-gi                    3.26.1-2                          amd64        Python 3 bindings for gobject-introspection libraries
 ii  python3-h5py                  2.7.1-2                           amd64        general-purpose Python interface to hdf5 (Python 3)
 ii  python3-idna                  2.6-1                             all          Python IDNA2008 (RFC 5891) handling (Python 3)
 ii  python3-keras                 2.1.1-1                           all          deep learning framework running on Theano or TensorFlow
 ii  python3-keyring               10.6.0-1                          all          store and access your passwords safely - Python 3 version of the package
 ii  python3-keyrings.alt          3.0-1                             all          alternate backend implementations for python3-keyring
-ii  python3-lib2to3               3.6.5-3                           all          Interactive high-level object-oriented language (2to3, version 3.6)
-ii  python3-minimal               3.6.5-3ubuntu1                    amd64        minimal subset of the Python language (default python3 version)
+ii  python3-lib2to3               3.6.7-1~18.04                     all          Interactive high-level object-oriented language (2to3, version 3.6)
+ii  python3-minimal               3.6.7-1~18.04                     amd64        minimal subset of the Python language (default python3 version)
 ii  python3-nose                  1.3.7-3                           all          test discovery and running for Python3 unittest
 ii  python3-nose-parameterized    0.3.4-4                           all          Decorator for parameterized testing with Nose - Python 3.x
 ii  python3-numpy                 1:1.13.3-2ubuntu1                 amd64        Fast array facility to the Python 3 language
@@ -433,9 +433,9 @@ ii  python3-theano                0.9.0+dfsg-2                      amd64       
 ii  python3-wheel                 0.30.0-0.2                        all          built-package format for Python
 ii  python3-xdg                   0.25-4ubuntu1                     all          Python 3 library to access freedesktop.org standards
 ii  python3-yaml                  3.12-1build2                      amd64        YAML parser and emitter for Python3
-ii  python3.6                     3.6.6-1~18.04                     amd64        Interactive high-level object-oriented language (version 3.6)
-ii  python3.6-dev                 3.6.6-1~18.04                     amd64        Header files and a static library for Python (v3.6)
-ii  python3.6-minimal             3.6.6-1~18.04                     amd64        Minimal subset of the Python language (version 3.6)
+ii  python3.6                     3.6.7-1~18.04                     amd64        Interactive high-level object-oriented language (version 3.6)
+ii  python3.6-dev                 3.6.7-1~18.04                     amd64        Header files and a static library for Python (v3.6)
+ii  python3.6-minimal             3.6.7-1~18.04                     amd64        Minimal subset of the Python language (version 3.6)
 ii  readline-common               7.0-3                             all          GNU readline and history libraries, common files
 ii  sed                           4.4-2                             amd64        GNU stream editor for filtering/transforming text
 ii  sensible-utils                0.0.12                            all          Utilities for sensible alternative selection

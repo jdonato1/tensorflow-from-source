@@ -54,6 +54,11 @@ then
 	COMMIT="$3"
 	CONFIG="$4"
 	XLA="$5"
+elif [ "$1" = "-r" ] # requirements
+then
+	dpkg -l > dpkg.txt
+	pip3 freeze > pip3_requirements.txt
+	exit
 else
 	grep '^##' "$0" | grep -v '^###'
 	exit 10
@@ -143,4 +148,5 @@ git checkout $COMMIT && \
         echo "To install this tensorflow onto a computer with an existing package (as root):" && \
         echo "#   pip3 install --upgrade " tensorflow-*whl && \
         echo && \
-        date "+%x %X: Done"
+        date "+%x %X: Done" && \
+	./tf_build -r
