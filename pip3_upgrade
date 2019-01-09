@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pip3 freeze | cut -d= -f1 | xargs pip3 install --upgrade 
+
+
