@@ -137,10 +137,24 @@ fi
 
 cd /root/tensorflow
 
+bazel_build () {
+	# try method one
+	SECONDS=0
+        bazel build $CONFIG //tensorflow/tools/pip_package:build_pip_package 
+	STATUS=$?
+
+	if [ "$STATUS" != 0 ] && [ "$SECONDS" -lt 300 ] 
+	then
+		echo Died so soon ...
+		echo Performing second attempt with --incompatible_package_name_is_a_function=false
+        	bazel build $CONFIG //tensorflow/tools/pip_package:build_pip_package --incompatible_package_name_is_a_function=false 
+	fi
+}
+
 git checkout $COMMIT && \
 	# python3, no xla
         ( echo /usr/bin/python3; echo; echo $XLA ) | ./configure && \
-        bazel build $CONFIG //tensorflow/tools/pip_package:build_pip_package && \
+	bazel_build && \
         bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg && \
         mv /tmp/tensorflow_pkg/tensorflow-*.whl . && \
         ls -l tensorflow-*.whl && \
